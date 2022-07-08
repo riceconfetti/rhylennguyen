@@ -2,72 +2,92 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 ---
-<Layout title="Welcome to Astro.">
+<Layout title="Hi, I'm Rhylen!">
 	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			Check out the <code>src/pages</code> directory to get started.<br/>
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card href="https://docs.astro.build/" title="Documentation" body="Learn how Astro works and explore the official API docs." /> 
-			<Card href="https://astro.build/integrations/" title="Integrations" body="Supercharge your project with new frameworks and libraries." /> 
-			<Card href="https://astro.build/themes/" title="Themes" body="Explore a galaxy of community-built starter themes." /> 
-			<Card href="https://astro.build/chat/" title="Chat" body="Come say hi to our amazing Discord community. ❤️" />
-		</ul>
+	   <div class="hero">
+	      <h1>Hello. <br>I'm <span class="name">Rhylen</span>!</h1>
+            <p>I'm a front-end developer & storyteller for the digital age</p>
+            <div class="button-group">
+               <button>Contact Me</button>
+               <button>Resume</button>
+            </div>
+	   </div>
+	   <div id="about">
+	      <h2>About Me</h2>
+	      <p>Hi, I'm Rhylen and I have a passion for creating novel experiences on the web. I started my journey in the digital world when I was 10 and picked up the book "How to build your own website." Since then I’ve been been around the internet with Greasemonkey userscripts and Tumblr theme customizations and fell in love with programming.</p>
+	      <p>Now, I’m graduating August 2022 and I'm still just as passisionate about computers as I was at 12 years old. Over the years I've become experienced in a wide variety of web technologies and languages. My main focus is building easy to navigate front-end experiences and making technology intuitive.</p>
+	      <p><strong>When I’m not coding,</strong>  I love dancing, reading, and playing board and table-top role playing games.</p>
+
+	      <div class="skills">
+	         <h2>Skills</h2>
+	         <ul>
+	            <li>HTML</li>
+	         </ul>
+	      </div>
+
+	   </div>
+
 	</main>
 </Layout>
 
-<style>
+<style lang="scss">
 	:root {
-		--astro-gradient: linear-gradient(0deg,#4F39FA, #DA62C4);
+		background-image: url(/Pattern.svg);
+		margin: 0;
+	}
+	p {
+	   margin:0;
 	}
 
 	h1 {
-		margin: 2rem 0;
+	    font-size: 3rem;
+	    margin: 0;
 	}
 
 	main {
-		margin: auto;
-    	padding: 1em;
-		max-width: 60ch;
+		margin: 0;
+		max-width: 1440px;
+		color: #090909;
+		display: flex;
+		flex-direction: column;
 	}
 
-	.text-gradient {
-		font-weight: 900;
-		background-image: var(--astro-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 100% 200%;
-		background-position-y: 100%;
-		border-radius: 0.4rem;
-		animation: pulse 4s ease-in-out infinite;
-	}
+   .hero {
+      height: 100vh;
+      text-align: center;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 4em;
+      gap: 18px;
+      .name {
+         color: #2B3464;
+      }
+   }
 
-	@keyframes pulse {
-		0%, 100% { background-position-y: 0%; }
-		50% { background-position-y: 80%; }
-	}
+   #about {
+      background-color: #2B3464;
+      padding: 2em;
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 17px;
+      color: #F8F8FF;
+      p {
+      margin: 10px 0;
+      }
+      h2 {
+         font-family: 'Josefin Sans';
+         font-style: normal;
+         font-weight: 700;
+         font-size: 20px;
+         line-height: 20px;
+         color:#53A2BE;
+      }
+   }
 
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		background: #4F39FA;
-		padding: 1.0rem;
-		border-radius: 0.4rem;
-		color: var(--color-bg);
-	}
-
-	.instructions code {
-		font-size: 0.875em;
-		border: 0.1em solid var(--color-border);
-		border-radius: 4px;
-		padding: 0.15em 0.25em;
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
 </style>
