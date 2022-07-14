@@ -1,0 +1,46 @@
+---
+const {skill, years} = Astro.props;
+
+const progress = "width:" + ((years > 5 ? 1 : years/5)*100) +"%";
+---
+
+<div class="skill">
+   <p>{skill}</p>
+   <div class="bar">
+      <div class="progress" style= {progress}>
+         <p class="label">
+            {years > 5 ? "5+": years<1 ? Math.round(years*12) : years} {years === 1 ? "year" : years < 1 ? "months" : "years"}
+         </p>
+      </div>
+   </div>
+</div>
+
+<style lang="scss">
+   .skill {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      .bar {
+         width: 70%;
+         font-size: .5em;
+         height: 2em;
+         background-color: grey;
+         text-align: right;
+         display:flex;
+         .progress {
+            width: var(--progress);
+            background-color: #3142D8;
+            display: flex;
+            align-items: center;
+            flex-direction: row-reverse;
+            margin-left: auto;
+         }
+         p {
+            color: white;
+            white-space: nowrap;
+            margin:0 10px;
+         }
+      }
+   }
+</style>
