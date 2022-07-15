@@ -9,7 +9,7 @@
 </script>
 
 <div class="navBar" class:open={showSidebar} style="width:{width}px">
-   <a href="/#">R.This</a>
+   <a id="logo" href="/#">R.This</a>
 
    <div class="hamburger" class:open={showSidebar} on:click={toggleSidebar}>
       <div class="bar" />
@@ -35,7 +35,12 @@
 </div>
 
 <style lang="scss">
-   @use "sass:math";
+   #logo {
+      transition: 0.5s;
+      &:hover {
+         color: #3142D8;
+      }
+   }
 
    .mainContent {
       margin-top: 5em;
@@ -95,16 +100,17 @@
                   content: "";
                   position:absolute;
                   height: 4px;
-                  width:0;
+                  width: 0;
+                  background-color: #3142D8;
                   bottom: -8px;
                   left:0;
+                  transition: 0.5s;
                }
             &:hover {
                transform: scale(1.1);
                position:relative;
                &::after {
                   width: 100%;
-                  background-color: #3142D8;
                }
             }
          }
