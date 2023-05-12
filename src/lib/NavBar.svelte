@@ -18,10 +18,10 @@
   </div>
 
   <div class="links" class:open={showSidebar} bind:clientWidth={sWidth}>
-    <div class="link"><a href="#about">#about</a></div>
-    <div class="link"><a href="#skills">#skills</a></div>
-    <div class="link"><a href="#work">#work</a></div>
-    <div class="link"><a href="#contact">#contact</a></div>
+    <a href="#about">#about</a>
+    <a href="#skills">#skills</a>
+    <a href="#work">#work</a>
+    <a href="#contact">#contact</a>
   </div>
 </div>
 
@@ -86,38 +86,50 @@
       }
     }
     a {
-      color: black;
+      color: rgb(0, 0, 0);
       text-decoration: none;
     }
     .links {
       display: flex;
       gap: 2em;
-      .link {
-        color: black;
+      padding: 1rem;
+      a {
+        position: relative;
+        color: rgb(0, 0, 0);
         text-decoration: none;
         box-sizing: border-box;
-        line-height: 1.2rem;
-        font-size: 1.2rem;
-        transform: scale(0.8);
         transition: 0.5s ease;
+
+        &::before {
+          content: "";
+          background-color: #ffffff;
+          position: absolute;
+          mix-blend-mode: difference;
+          left: 0.5rem;
+          bottom: .15rem;
+          width: 100%;
+          height: .4rem;
+          z-index: 1;
+          transition: all 0.3s ease-in-out;
+        }
+
         &::after {
           content: "";
+          background-color: #cebd27;
           position: absolute;
-          height: 4px;
-          width: 0;
-          background-color: #3142d8;
-          bottom: -8px;
-          left: 0;
-          transition: 0.5s ease;
+          left: 0.5rem;
+          bottom: .15rem;
+          width: 100%;
+          height: .4rem;
+          z-index: -11;
+          transition: all 0.3s ease-in-out;
         }
-        &:hover {
-          transform: scale(1);
-          transition: 0.5s ease;
-          position: relative;
-          &::after {
-            transition: 0.5s ease;
-            width: 100%;
-          }
+
+        &:hover::before, &:hover::after{
+          left: -5px;
+          bottom: 0;
+          height: 100%;
+          width: calc(100% + 10px);
         }
       }
       @media only screen and (max-width: 1200px) {
