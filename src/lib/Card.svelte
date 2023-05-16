@@ -1,5 +1,5 @@
 <script>
-   import Header from "../components/Header.svelte";
+   import Header from "./Header.svelte";
    export let name;
    let w;
 </script>
