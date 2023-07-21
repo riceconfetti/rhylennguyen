@@ -43,6 +43,7 @@
   }
 
   .mainContent {
+    position: relative;
     margin-top: 5em;
     @media only screen and (min-width: 1200px) {
       margin-right: 0 !important;
@@ -149,23 +150,11 @@
         &.open {
           width: 30vw;
           padding: 2em;
-          a::after {
-            content: "";
-            position: absolute;
-            height: 4px;
-            width: 0;
-            bottom: -8px;
-            left: 0;
-            transition: 0.5s;
-          }
           a:hover {
             transform: scale(1.1);
             transition: 0.5s;
             position: relative;
-            &::after {
-              width: 90%;
-              background-color: #3142d8;
-            }
+
           }
         }
       }
