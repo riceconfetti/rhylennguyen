@@ -8,165 +8,103 @@
   }
 </script>
 
-<div class="navBar" class:open={showSidebar} style="width:{width}px">
-  <a id="logo" href="/#">R.This</a>
-
-  <div class="hamburger" class:open={showSidebar} on:click={toggleSidebar}>
-    <div class="bar" />
-    <div class="bar" />
-    <div class="bar" />
+<div class="navBar" class:open={showSidebar} style="width:{width}">
+  <p>rhylen<span>.</span> n</p>
+  <div class="hamburger" on:click={toggleSidebar} on:keydown={toggleSidebar}>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
   </div>
-
-  <div class="links" class:open={showSidebar} bind:clientWidth={sWidth}>
-    <a href="#about">#about</a>
-    <a href="#skills">#skills</a>
-    <a href="#work">#work</a>
-    <a href="#contact">#contact</a>
+  <div class="links">
+    <a href="#about">about.</a>
+    <a href="#skills">skills.</a>
+    <a href="#portfolio">portfolio.</a>
+    <a href="#contact">contact.</a>
   </div>
-</div>
-
-<div
-  class="mainContent"
-  class:open={showSidebar}
-  bind:clientWidth={width}
-  style="margin-right:{sWidth}px"
->
-  <slot />
 </div>
 
 <style lang="scss">
-  #logo {
-    transition: 0.5s;
-    &:hover {
-      color: #3142d8;
-    }
-  }
-
-  .mainContent {
-    margin-top: 5em;
-    @media only screen and (min-width: 1200px) {
-      margin-right: 0 !important;
-    }
-  }
   .navBar {
-    position: fixed;
-    top: 0;
-    background-color: white;
-    z-index: 1;
     display: flex;
-    justify-content: space-between;
+    color: white;
+    font-weight: bold;
     align-items: center;
-    height: 5em;
+    padding: 1rem 1.5rem;
+    justify-content: space-between;
+
     .hamburger {
       display: none;
-      @media only screen and (max-width: 1200px) {
-        display: flex;
-        gap: 5px;
-        flex-direction: column;
-        cursor: pointer;
-        .bar {
-          height: 3px;
-          width: 25px;
-          background-color: #000;
-          transition: 0.5s;
-        }
-        &.open {
-          .bar:first-child {
-            -webkit-transform: rotate(-45deg) translate(-3px, 8px);
-            transform: rotate(-45deg) translate(-3px, 8px);
-          }
-          .bar:nth-child(2) {
-            opacity: 0;
-          }
-          .bar:nth-child(3) {
-            -webkit-transform: rotate(45deg) translate(-3px, -8px);
-            transform: rotate(45deg) translate(-3px, -8px);
-          }
-        }
-      }
     }
-    a {
-      color: rgb(0, 0, 0);
-      text-decoration: none;
+
+    span {
+      color: #ffc700;
     }
+
     .links {
       display: flex;
-      gap: 2em;
-      padding: 1rem;
+      gap: 1rem;
       a {
-        position: relative;
-        color: rgb(0, 0, 0);
+        font-weight: bold;
+        color: white;
         text-decoration: none;
-        box-sizing: border-box;
-        transition: 0.5s ease;
+      }
+    }
 
-        &::before {
-          content: "";
-          background-color: #ffffff;
-          position: absolute;
-          mix-blend-mode: difference;
-          left: 0.5rem;
-          bottom: .15rem;
+    @media only screen and (max-width: 800px) {
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        width: 20px;
+        gap: 4px;
+        transition-duration: ease-in-out 0.5s;
+
+        .bar {
           width: 100%;
-          height: .4rem;
-          z-index: 1;
-          transition: all 0.3s ease-in-out;
-        }
-
-        &::after {
-          content: "";
-          background-color: #cebd27;
-          position: absolute;
-          left: 0.5rem;
-          bottom: .15rem;
-          width: 100%;
-          height: .4rem;
-          z-index: -11;
-          transition: all 0.3s ease-in-out;
-        }
-
-        &:hover::before, &:hover::after{
-          left: -5px;
-          bottom: 0;
-          height: 100%;
-          width: calc(100% + 10px);
+          height: 3px;
+          background-color: white;
+          transition: 0.5s;
         }
       }
-      @media only screen and (max-width: 1200px) {
-        position: fixed;
-        flex-direction: column;
-        overflow-x: hidden;
+
+      .links {
+        position: absolute;
         top: 0;
-        right: 0;
-        height: 100vh;
-        background-color: black;
-        width: 0;
-        padding: 2em 0em;
-        transition: 0.5s;
+        bottom: 0;
+        aspect-ratio: 1;
+        border-radius: 100%;
+        background-color: #ffc700;
+        display: none;
+        align-items: left;
+        justify-content: center;
+        flex-direction: column;
+        padding: 3rem;
+
         a {
-          color: white;
+          color: black;
+          font-size: 2rem;
         }
-        &.open {
-          width: 30vw;
-          padding: 2em;
-          a::after {
-            content: "";
-            position: absolute;
-            height: 4px;
-            width: 0;
-            bottom: -8px;
-            left: 0;
+      }
+
+      &.open {
+        .hamburger {
+          display: block;
+          z-index: 2;
+          transition: 0.5s;
+          .bar:first-child {
+            transform: rotate(45deg) translate(4px, 0);
             transition: 0.5s;
           }
-          a:hover {
-            transform: scale(1.1);
+          .bar:nth-child(2) {
             transition: 0.5s;
-            position: relative;
-            &::after {
-              width: 90%;
-              background-color: #3142d8;
-            }
+            opacity: 0;
           }
+          .bar:last-child {
+            transition: 0.5s;
+            transform: rotate(-45deg) translate(4px, 0);
+          }
+        }
+
+        .links {
         }
       }
     }
