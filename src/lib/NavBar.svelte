@@ -2,13 +2,17 @@
   let showSidebar = false;
   let width;
   let sWidth;
+  let navHeight;
+
 
   function toggleSidebar() {
     showSidebar = !showSidebar;
   }
+
+  export let showNav;
 </script>
 
-<div class="navBar" class:open={showSidebar} style="width:{width}">
+<div class="navBar" class:open={showSidebar} class:show={showNav} bind:clientHeight={navHeight} style="top: -{navHeight}px;">
   <p>rhylen<span>.</span> n</p>
   <div class="hamburger" on:click={toggleSidebar} on:keydown={toggleSidebar}>
     <div class="bar"></div>
@@ -25,12 +29,24 @@
 
 <style lang="scss">
   .navBar {
+    position:fixed;
+    width: 100%;
+    box-sizing: border-box;
+    z-index:1;
     display: flex;
     color: white;
+    background-color: #171717;
     font-weight: bold;
     align-items: center;
     padding: 1rem 1.5rem;
     justify-content: space-between;
+    border-bottom: #ffc70028 solid 1px;
+    transition: ease-in-out 0.5s;
+
+    &.show {
+        top:0!important;
+        transition: 0.5s;
+    }
 
     .hamburger {
       display: none;
