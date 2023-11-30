@@ -99,6 +99,7 @@
           color: black;
           font-size: 2rem;
         }
+<<<<<<< HEAD
       }
 
       &.open {
@@ -113,6 +114,16 @@
           .bar:nth-child(2) {
             transition: 0.5s;
             opacity: 0;
+=======
+        &.open {
+          width: 30vw;
+          padding: 2em;
+          a:hover {
+            transform: scale(1.1);
+            transition: 0.5s;
+            position: relative;
+
+>>>>>>> 26c01c0ec990ff4a9e10e3443b0c6aa9ced75898
           }
           .bar:last-child {
             transition: 0.5s;
