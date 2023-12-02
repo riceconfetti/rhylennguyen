@@ -25,8 +25,8 @@
 
   <div class="landing">
     <div class="hero">
-      <h1>Hi, I'm Rhylen</h1>
-      <h1>I'm a <span>Front-End Developer</span></h1>
+      <h1>Hi, I'm <span style="color: #ffc700">Rhylen,</span></h1>
+      <h1>I'm a <span class="underline">Front-End Developer</span></h1>
     </div>
     <div class="landing-links">
       <a href="#about">about.</a>
@@ -44,26 +44,57 @@
     align-items: center;
     height: 100vh;
     box-sizing: border-box;
-    padding: 2rem;
+    padding: 15rem;
     color: white;
     overflow-x: hidden;
-    .hero {
-      display: flex;
-      flex-direction: column;
-      height: min;
-    }
-    
-    .landing-links {
+    position: relative;
+    &::before {
+      content: "";
+      z-index: -99;
       background-color: #ffc700;
       height: 100%;
       aspect-ratio: 1;
-      left:0;
       border-radius: 100%;
       position: absolute;
+      right: 0;
+      transform: translateX(50%);
+      overflow-x: hidden;
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      height: min-content;
+
+      h1 {
+        font-size: 3rem;
+      }
+
+      .underline {
+        position:relative;
+        &::after {
+          content: "";
+          width: 100%;
+          height: 0.75rem;
+          background-color: #ffc700;
+          display: block;
+          position: absolute;
+          bottom: -1rem;
+          right: 0;
+        }
+      }
+    }
+
+    .landing-links {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      right: -50%;
+      gap: 5rem;
+      a {
+        color: black;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 2.25rem;
+      }
     }
   }
 </style>
