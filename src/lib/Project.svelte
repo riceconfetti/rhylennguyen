@@ -28,7 +28,7 @@
       right: -1.2rem;
       bottom: -1.3rem;
       color: #fff;
-      font-size: 2.6rem;
+      font-size: 2.4rem;
       font-weight: 700;
       line-height: normal;
 

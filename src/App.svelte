@@ -5,6 +5,7 @@
   import Skills from "./pages/Skills.svelte";
   import Portfolio from "./pages/Portfolio.svelte";
   import Contact from "./pages/Contact.svelte";
+  import Footer from "./lib/Footer.svelte";
   import { onMount, onDestroy } from "svelte";
   let scrollNavBar;
   $: show = false;
@@ -32,10 +33,12 @@
   <Skills/>
   <Portfolio/>
   <Contact/>
+  <Footer/>
 </main>
 
 <style lang="scss">
   main {
     width: 100%;
+    position: relative;
   }
 </style>
