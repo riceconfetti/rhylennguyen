@@ -33,7 +33,10 @@
     padding: 15rem;
     padding-block: 20rem;
     position: relative;
-
+    @media only screen and (max-width: 1024px){
+      padding: 6rem;
+      padding-block: 3rem;
+    }
     div {
       display: flex;
       flex-direction: column;
@@ -48,6 +51,10 @@
       font-weight: 700;
       line-height: 168.184%; /* 40.364px */
       width: 70%;
+
+      @media only screen and (max-width: 1024px){
+      font-size: 14px;
+    }
     }
   }
 </style>

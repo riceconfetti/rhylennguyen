@@ -23,6 +23,9 @@
     height: 80%;
     align-items: center;
     position: relative;
+    @media only screen and (max-width: 1024px){
+      padding-block: 2rem;
+    }
 
     .text-box {
       display: flex;
@@ -35,10 +38,13 @@
       p {
         color: #000;
         font-family: "Open Sans";
-        font-size: 32px;
+        font-size: 28px;
         font-weight: 700;
         line-height: 168.184%; /* 40.364px */
         width: 70%;
+        @media only screen and (max-width: 1024px){
+      font-size: 1rem;
+    }
       }
 
       a {
@@ -50,6 +56,9 @@
         line-height: normal;
         letter-spacing: 0.132px;
         text-decoration: none;
+        @media only screen and (max-width: 1024px){
+      font-size: 1.5rem;
+    }
         .at {
           transition: all ease-in-out .2s;
         }
@@ -59,6 +68,9 @@
             color: white;
             font-size: 48px;
             transition: all ease-in-out .2s;
+            @media only screen and (max-width: 1024px){
+      font-size: 1.6rem;
+    }
           }
         }
       }

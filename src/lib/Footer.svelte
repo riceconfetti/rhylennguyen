@@ -78,15 +78,29 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    @media only screen and (max-width: 1024px){
+      gap: .5rem;
+      bottom: -2rem;
+      padding-bottom: 1rem;
+    }
 
     .socials {
       display: flex;
       gap: 2rem;
       justify-content: center;
+      @media only screen and (max-width: 1024px){
+      gap: 1rem;
+      svg {
+        width: 24px;
+      }
+    }
     }
     p {
       font-size: 1.2rem;
       color: white;
+      @media only screen and (max-width: 1024px){
+      font-size: 12px;
+    }
     }
   }
 </style>

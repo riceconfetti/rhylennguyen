@@ -21,8 +21,13 @@
 <style lang="scss">
   .skills-box {
     display: flex;
+    max-height: 60vh;
+    flex-wrap: wrap;
     padding: 0 15rem;
     flex-direction: column;
     gap: 2.5rem;
+    @media only screen and (max-width: 1024px){
+      padding: 4rem;
+    }
   }
 </style>

@@ -18,6 +18,11 @@
     height: 100%;
     text-align: center;
 
+    @media only screen and (max-width: 1024px){
+      font-size: 32px;
+      font-weight: 900;
+    }
+
     &.light {
       color: black;
     }

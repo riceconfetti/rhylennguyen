@@ -42,10 +42,17 @@
     justify-content: space-between;
     border-bottom: #ffc70028 solid 1px;
     transition: ease-in-out 0.5s;
+
+    @media only screen and (max-width: 1024px){
+      padding: .75rem;
+    }
     a {
         font-weight: bold;
         color: white;
         text-decoration: none;
+        @media only screen and (max-width: 1024px){
+      font-size: 14px;
+    }
       }
 
     &.show {
