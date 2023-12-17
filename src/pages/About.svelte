@@ -15,7 +15,7 @@
         and fell in love with programming.
       </p>
       <p>
-        These days, I'm still just as passisionate about computers as I was at 12
+        These days, I'm still just as passisionate about computers as I was at 10
         years old. Over the years I've become experienced in a wide variety of web
         technologies and languages. My main focus is building easy to navigate
         front-end experiences and making technology intuitive. When I'm not

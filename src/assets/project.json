@@ -3,28 +3,28 @@
     "img": "./the-daily-drip.png",
     "name": "the daily drip",
     "link": "the-daily-drip.onrender.com",
-    "description": "Project writeup/case study. Problem to be solved, pros and cons, challenges about the project, structure, technologies adopted and implemented. What was learned from this project. What you bring from doing this. What you would change if you were to do it again",
-    "tags": ["tag", "tag", "tag", "tag"]
+    "description": "A mini news site for Genshin Impact and Honkai: Star Rail. Aimed at compiling game leaks and keeping a calendar list of upcoming characters releases and features.",
+    "tags": ["astro", "nanostore", "html", "scss", "responsive"]
   },
   {
    "img": "./tictacteam.png",
    "name": "tic tac team",
    "link": "tictacteam.onrender.com",
-   "description": "Project writeup/case study. Problem to be solved, pros and cons, challenges about the project, structure, technologies adopted and implemented. What was learned from this project. What you bring from doing this. What you would change if you were to do it again",
-   "tags": ["tag", "tag", "tag", "tag"]
+   "description": "A small application for a voip meta-game to be played in Genshin Impact. Generates random grids of characters and plays like a mixture of Connect Four and Tic Tac Toe.",
+   "tags": ["svelte", "vite", "html", "javascript", "scss"]
  },
  {
    "img": "./beepboopproductions.png",
    "name": "beep boop productions",
    "link": "beep-boop-productions.onrender.com",
-   "description": "Project writeup/case study. Problem to be solved, pros and cons, challenges about the project, structure, technologies adopted and implemented. What was learned from this project. What you bring from doing this. What you would change if you were to do it again",
-   "tags": ["tag", "tag", "tag", "tag"]
+   "description": "Visual playlist for Beep Boop Productions. Used as promotional material for in person dance events.",
+   "tags": ["html", "css", "astro", "svelte"]
  },
  {
    "img": "./gammasector.png",
    "name": "gamma sector",
    "link": "gammasector.onrender.com",
-   "description": "Project writeup/case study. Problem to be solved, pros and cons, challenges about the project, structure, technologies adopted and implemented. What was learned from this project. What you bring from doing this. What you would change if you were to do it again",
-   "tags": ["tag", "tag", "tag", "tag"]
+   "description": "Informational hub for an online table-top roleplaying game built for a course assignment. Contains background on setting and culture.",
+   "tags": ["html", "css"]
  }
 ]
