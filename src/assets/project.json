@@ -1,0 +1,30 @@
+[
+  {
+    "img": "./the-daily-drip.png",
+    "name": "the daily drip",
+    "link": "the-daily-drip.onrender.com",
+    "description": "Project writeup/case study. Problem to be solved, pros and cons, challenges about the project, structure, technologies adopted and implemented. What was learned from this project. What you bring from doing this. What you would change if you were to do it again",
+    "tags": ["tag", "tag", "tag", "tag"]
+  },
+  {
+   "img": "./tictacteam.png",
+   "name": "tic tac team",
+   "link": "tictacteam.onrender.com",
+   "description": "Project writeup/case study. Problem to be solved, pros and cons, challenges about the project, structure, technologies adopted and implemented. What was learned from this project. What you bring from doing this. What you would change if you were to do it again",
+   "tags": ["tag", "tag", "tag", "tag"]
+ },
+ {
+   "img": "./beepboopproductions.png",
+   "name": "beep boop productions",
+   "link": "beep-boop-productions.onrender.com",
+   "description": "Project writeup/case study. Problem to be solved, pros and cons, challenges about the project, structure, technologies adopted and implemented. What was learned from this project. What you bring from doing this. What you would change if you were to do it again",
+   "tags": ["tag", "tag", "tag", "tag"]
+ },
+ {
+   "img": "./gammasector.png",
+   "name": "gamma sector",
+   "link": "gammasector.onrender.com",
+   "description": "Project writeup/case study. Problem to be solved, pros and cons, challenges about the project, structure, technologies adopted and implemented. What was learned from this project. What you bring from doing this. What you would change if you were to do it again",
+   "tags": ["tag", "tag", "tag", "tag"]
+ }
+]

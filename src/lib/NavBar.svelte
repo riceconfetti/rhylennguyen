@@ -13,7 +13,7 @@
 </script>
 
 <div class="navBar" class:open={showSidebar} class:show={showNav} bind:clientHeight={navHeight} style="top: -{navHeight}px;">
-  <p>rhylen<span>.</span> n</p>
+  <a href="/#"><p>rhylen<span>.</span> n</p></a>
   <div class="hamburger" on:click={toggleSidebar} on:keydown={toggleSidebar}>
     <div class="bar"></div>
     <div class="bar"></div>
@@ -38,10 +38,15 @@
     background-color: #171717;
     font-weight: bold;
     align-items: center;
-    padding: 1rem 1.5rem;
+    padding: 1.5rem;
     justify-content: space-between;
     border-bottom: #ffc70028 solid 1px;
     transition: ease-in-out 0.5s;
+    a {
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+      }
 
     &.show {
         top:0!important;
@@ -58,12 +63,8 @@
 
     .links {
       display: flex;
-      gap: 1rem;
-      a {
-        font-weight: bold;
-        color: white;
-        text-decoration: none;
-      }
+      gap: 4rem;
+     
     }
 
     @media only screen and (max-width: 800px) {
