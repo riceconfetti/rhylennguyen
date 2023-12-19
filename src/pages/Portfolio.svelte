@@ -7,8 +7,7 @@
   let viewWidth;
   let isOverlay = false;
 
-  $: calcMaxWidth =
-    Math.trunc(viewWidth / (projectWidth + 96)) * projectWidth - 240;
+  $: calcMaxWidth = Math.trunc((viewWidth / (projectWidth+96)))*(projectWidth+96);
   $: currentProject = {
     img: "./the-daily-drip.png",
     name: "the daily drip",
@@ -58,15 +57,15 @@
 <style lang="scss">
   .project-box {
     position: absolute;
-    box-sizing: border-box;
-    padding-block: 10rem;
-    margin-left: 15rem;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    margin: 5rem;
+    align-content: flex-start;
+    justify-content: space-between;
+    box-sizing: border-box;
     height: 85%;
     gap: 6rem;
-    justify-content: space-between;
     overflow-x: auto;
   }
 

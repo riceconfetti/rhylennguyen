@@ -14,28 +14,29 @@
 <style lang="scss">
   .skill {
     display: flex;
-    width: 100%;
+    flex-shrink: 1;
     justify-content: space-between;
-    @media only screen and (max-width: 1024px){
+    @media only screen and (max-width: 1024px) {
       width: 49%;
     }
     p {
       color: #fff;
-      font-size: 20px;
-      font-weight: 700;
-      text-transform: lowercase;
-      @media only screen and (max-width: 1024px){
       font-size: 16px;
-    }
+      font-weight: 700;
+      width: 10rem;
+      text-transform: lowercase;
+      @media only screen and (max-width: 1024px) {
+        font-size: 16px;
+      }
     }
     .progress-bar {
       position: relative;
       height: 21px;
       background: rgba(255, 255, 255, 0.07);
-      width: calc(70%);
-      @media only screen and (max-width: 1024px){
-      height: 16px;
-    }
+      width: 100%;
+      @media only screen and (max-width: 1024px) {
+        height: 16px;
+      }
       .progress {
         background: #ffc700;
         box-sizing: border-box;
@@ -46,9 +47,9 @@
         color: #000;
         font-weight: 700;
         height: 100%;
-        @media only screen and (max-width: 1024px){
-      font-size: 12px;
-    }
+        @media only screen and (max-width: 1024px) {
+          font-size: 12px;
+        }
       }
     }
   }

@@ -7,7 +7,7 @@
 <style lang="scss">
   h2 {
     position: absolute;
-    font-size: 96px;
+    font-size: 8vh;
     line-height: 77%;
     text-transform: uppercase;
     letter-spacing: 26.88px;

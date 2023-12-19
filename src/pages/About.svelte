@@ -30,8 +30,8 @@
   .stuff {
     background-color: #ffc700;
     display: flex;
-    padding: 15rem;
-    padding-block: 20rem;
+    padding: 5rem;
+    padding-block: 7rem;
     position: relative;
     @media only screen and (max-width: 1024px){
       padding: 6rem;
@@ -46,7 +46,7 @@
     p {
       color: #000;
       font-family: Open Sans;
-      font-size: 24px;
+      font-size: 1.2rem;
       font-style: normal;
       font-weight: 700;
       line-height: 168.184%; /* 40.364px */
