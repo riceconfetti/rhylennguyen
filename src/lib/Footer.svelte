@@ -77,7 +77,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: .7rem;
     @media only screen and (max-width: 1024px){
       gap: .5rem;
       bottom: -2rem;
@@ -86,8 +86,11 @@
 
     .socials {
       display: flex;
-      gap: 2rem;
+      gap: 1.5rem;
       justify-content: center;
+      svg {
+        width: 24px;
+      }
       @media only screen and (max-width: 1024px){
       gap: 1rem;
       svg {
@@ -96,7 +99,7 @@
     }
     }
     p {
-      font-size: 1.2rem;
+      font-size: 1rem;
       color: white;
       @media only screen and (max-width: 1024px){
       font-size: 12px;

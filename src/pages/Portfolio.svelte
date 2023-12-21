@@ -6,7 +6,10 @@
   let projectWidth;
   let viewWidth;
   let isOverlay = false;
+  let imgWidth;
+  let imgHeight;
 
+  $: aspectRatio = imgHeight/imgWidth
   $: calcMaxWidth = Math.trunc((viewWidth / (projectWidth+96)))*(projectWidth+96);
   $: currentProject = {
     img: "./the-daily-drip.png",
@@ -32,8 +35,8 @@
   </div>
 
   <div class="overlay" class:display={isOverlay} on:click={()=>{isOverlay=false}} on:keydown={()=>{isOverlay=false}}>
-    <div class="content">
-      <img src={currentProject.img} alt="{currentProject.name} Showcase" />
+    <div class="content" style:--aspectRatio = {aspectRatio}>
+      <img src={currentProject.img} alt="{currentProject.name} Showcase" bind:naturalHeight={imgHeight} bind:naturalWidth={imgWidth}/>
       <div class="box">
         <div class="text-group">
           <div class="title">
@@ -61,16 +64,18 @@
     flex-direction: column;
     flex-wrap: wrap;
     margin: 5rem;
+    padding-block:5rem;
     align-content: flex-start;
-    justify-content: space-between;
+    justify-content: center;
     box-sizing: border-box;
-    height: 85%;
     gap: 6rem;
     overflow-x: auto;
+    height: 80%;
   }
 
   .overlay {
     position: absolute;
+    box-sizing: border-box;
     width: 100%;
     height: 100%;
     display: none;
@@ -83,7 +88,8 @@
     }
     .content {
       display: flex;
-      width: max-content;
+      height: 65%;
+      aspect-ratio: var(--aspectRatio);
       align-content: center;
       position: relative;
       .box {
