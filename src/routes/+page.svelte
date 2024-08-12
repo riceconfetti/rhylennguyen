@@ -9,18 +9,12 @@
 		let currentIndex = -1;
 		let animating: Boolean;
 		let swipePanels = gsap.utils.toArray('.swipe-section section');
-		let headers = gsap.utils.toArray('.animateHeader .swipeHeader');
 
 		// set second panel two initial 100%
 		gsap.set('.y-100', { yPercent: 100 });
-		gsap.set('.x-100', { xPercent: 100 });
 
 		// set z-index levels for the swipe panels
 		gsap.set(swipePanels, {
-			zIndex: (i) => i
-		});
-
-		gsap.set(headers, {
 			zIndex: (i) => i
 		});
 
@@ -70,36 +64,6 @@
 			console.log(index);
 		}
 
-		function gotoHeader(index: number, isScrollingDown: Boolean) {
-			animating = true;
-			// return to normal scroll if we're at the end or back up to the start
-			if ((index === headers.length && isScrollingDown) || (index === -1 && !isScrollingDown)) {
-				let target = index;
-				gsap.to(target, {
-					// yPercent: isScrollingDown ? -100 : 0,
-					duration: 0.0,
-					onComplete: () => {
-						animating = false;
-						isScrollingDown && intentObserver.disable();
-					}
-				});
-				return;
-			}
-
-			//   target the second panel, last panel?
-			let target = isScrollingDown ? headers[index] : headers[currentIndex];
-
-			gsap.to(target, {
-				xPercent: isScrollingDown ? 0 : 100,
-				duration: 0.75,
-				onComplete: () => {
-					animating = false;
-				}
-			});
-			currentIndex = index;
-			console.log(index);
-		}
-
 		// pin swipe section and initiate observer
 		ScrollTrigger.create({
 			trigger: '.swipe-section',
@@ -116,18 +80,82 @@
 			}
 		});
 
+		let currentHIndex = -1;
+		let animatingH: Boolean;
+
+		let headers = gsap.utils.toArray('.animateHeader .swipeHeader');
+
+		gsap.set('.x-100', { xPercent: 100 });
+
+		gsap.set(headers, {
+			zIndex: (i) => i
+		});
+
+		let intentHObserver = ScrollTrigger.observe({
+			type: 'wheel,touch',
+			onUp: () => !animatingH && gotoHeader(currentHIndex + 1, true),
+			onDown: () => !animatingH && gotoHeader(currentHIndex - 1, false),
+			wheelSpeed: -1,
+			tolerance: 10,
+			preventDefault: true,
+			onPress: (self) => {
+				// on touch devices like iOS, if we want to prevent scrolling, we must call preventDefault() on the touchstart (Observer doesn't do that because that would also prevent side-scrolling which is undesirable in most cases)
+				ScrollTrigger.isTouch && self.event.preventDefault();
+			}
+		});
+		intentHObserver.disable();
+
+		function gotoHeader(index: number, isScrollingDown: Boolean) {
+			animatingH = true;
+			// return to normal scroll if we're at the end or back up to the start
+			if ((index === headers.length && isScrollingDown) || (index === -1 && !isScrollingDown)) {
+				let target = index;
+				gsap.to(target, {
+					// yPercent: isScrollingDown ? -100 : 0,
+					duration: 0.0,
+					onComplete: () => {
+						animatingH = false;
+						isScrollingDown && intentHObserver.disable();
+					}
+				});
+				return;
+			}
+
+			//   target the second panel, last panel?
+			let target = isScrollingDown ? headers[index] : headers[currentHIndex];
+			let parent = isScrollingDown ? headers[currentHIndex] : headers[currentHIndex - 1];
+
+			gsap.to(target, {
+				xPercent: isScrollingDown ? 0 : 100,
+				duration: 0.75,
+				onComplete: () => {
+					animatingH = false;
+				}
+			});
+
+			gsap.to(parent, {
+				xPercent: isScrollingDown ? 100 : 0,
+				duration: 0.75,
+				onComplete: () => {
+					animatingH = false;
+				}
+			});
+			currentHIndex = index;
+			console.log(index);
+		}
+
 		ScrollTrigger.create({
 			trigger: '.animateHeader',
 			pin: true,
 			start: 'top top',
 			end: '+=1',
 			onEnter: (self) => {
-				intentObserver.enable();
-				gotoHeader(currentIndex + 1, true);
+				intentHObserver.enable();
+				gotoHeader(currentHIndex + 1, true);
 			},
 			onEnterBack: () => {
-				intentObserver.enable();
-				gotoHeader(currentIndex - 1, false);
+				intentHObserver.enable();
+				gotoHeader(currentHIndex - 1, false);
 			}
 		});
 	});
@@ -151,17 +179,21 @@
 <div
 	class="fixed animateHeader size-full flex justify-end items-center z-10 inset-0 pointer-events-none cursor-none"
 >
-	{#each pages as p, index}
-		<h2
-			class="{index > 0
-				? 'x-100'
-				: ''} swipeHeader text-6xl leading-0 font-bold uppercase tracking-[1rem] [writing-mode:sideways-lr] {p.color
-				? ' text-cynical'
-				: ' text-white'}"
-		>
-			{p.name}
-		</h2>
-	{/each}
+	<h2
+		class="swipeHeader text-6xl leading-0 font-bold uppercase tracking-[1rem] [writing-mode:sideways-lr]"
+	>
+		home
+	</h2>
+	<h2
+		class="x-100 swipeHeader text-6xl leading-0 font-bold uppercase tracking-[1rem] [writing-mode:sideways-lr] text-cynical"
+	>
+		about
+	</h2>
+	<h2
+		class="x-100 swipeHeader text-6xl leading-0 font-bold uppercase tracking-[1rem] [writing-mode:sideways-lr]"
+	>
+		skills
+	</h2>
 </div>
 
 <div class="swipe-section size-full">
@@ -227,9 +259,5 @@
 	.swipe-section section,
 	.swipeHeader {
 		position: absolute;
-	}
-
-	.vh-200 {
-		height: 500vh !important;
 	}
 </style>
