@@ -3,6 +3,9 @@ export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
 		extend: {
+			fontFamily: {
+				sans: 'Open Sans'
+			},
 			colors: {
 				transparent: 'transparent',
 				citrine: '#FFC700',
