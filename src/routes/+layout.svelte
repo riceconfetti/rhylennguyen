@@ -3,6 +3,8 @@
 	import { Menu } from 'lucide-svelte';
 	import Sidebar from '$lib/components/Sidebar.svelte';
 
+	export const prerender = true;
+
 	const pages = [
 		{
 			name: 'about',
