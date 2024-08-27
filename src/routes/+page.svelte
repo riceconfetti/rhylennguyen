@@ -88,11 +88,6 @@
 			class="bg-citrine text-xs text-cynical leading-2 w-full font-bold flex flex-col gap-6 p-12 pr-24 md:p-10"
 		></div>
 	</Panel>
-	<Panel title="end" color="dark">
-		<div
-			class="bg-citrine text-xs text-cynical leading-2 w-full font-bold flex flex-col gap-6 p-12 pr-24 md:p-10"
-		></div>
-	</Panel>
 </div>
 
 <style scoped>
