@@ -53,5 +53,5 @@
 		</div>
 	</nav>
 	<Sidebar {pages} {sidebar} />
-	<div class="w-full h-full"><slot /></div>
+	<div class="w-full h-full flex flex-col justify-center"><slot /></div>
 </main>

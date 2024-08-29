@@ -1,7 +1,10 @@
 <script>
 	import Panel from '$lib/components/Panel.svelte';
+	import Skill from '$lib/components/Skill.svelte';
+	import Copyright from 'svelte-copyright';
 	import { animate, scroll } from 'motion';
 	import { onMount } from 'svelte';
+	import { Linkedin, Github } from 'lucide-svelte';
 
 	onMount(() => {
 		const loader = document.querySelector('.loader');
@@ -19,6 +22,7 @@
 				}
 			);
 		}, 1000);
+
 		document.querySelectorAll('.panel').forEach((section) => {
 			const header = section.querySelector('.header');
 			scroll(
@@ -48,7 +52,7 @@
 	<!-- <l-newtons-cradle size="78" speed="1.4" color="rgb(255 199 0)"></l-newtons-cradle> -->
 </div>
 
-<div class="size-full h-dvh">
+<div id="scroll" class="size-full flex flex-col">
 	<Panel title="home" color="transparent">
 		<div>
 			<h1 class="font-bold text-xl">Hi, I'm <span class="text-citrine">Rhylen</span>,</h1>
@@ -82,11 +86,32 @@
 		</div>
 	</Panel>
 	<Panel title="projects" color="white"></Panel>
-	<Panel title="skills" color="white"></Panel>
+	<Panel title="skills" color="white">
+		<div class="flex gap-4 justify-between h-3/5 w-full p-12 pr-20">
+			<Skill years="6">html & css</Skill>
+			<Skill years="6">javascript</Skill>
+			<Skill years="4">java</Skill>
+			<Skill years="2">vue</Skill>
+			<Skill years="2">svelte</Skill>
+		</div>
+	</Panel>
 	<Panel title="contact" color="dark">
 		<div
-			class="bg-citrine text-xs text-cynical leading-2 w-full font-bold flex flex-col gap-6 p-12 pr-24 md:p-10"
-		></div>
+			class="bg-citrine text-xs h-[60dvh] justify-center text-cynical leading-2 w-full font-bold flex flex-col gap-6 p-12 pr-24 md:p-10"
+		>
+			<h3 class="text-lg">
+				I’m available for freelance work! If you’re interested in my work (or if you have fun
+				pictures of your cat), I would love to chat!
+			</h3>
+			<a class="text-lg" href="/">me@rhylennguyen.com</a>
+		</div>
+		<footer class="w-full flex flex-col gap-2 items-center absolute bottom-0 p-6">
+			<div class="flex p-2 items-center justify-center gap-2">
+				<Github />
+				<Linkedin />
+			</div>
+			<Copyright class="text-xs">Rhylen Nguyen</Copyright>
+		</footer>
 	</Panel>
 </div>
 
