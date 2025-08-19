@@ -17,6 +17,8 @@ const techStack: Record<string, string> = {
   astro: "Astro",
   tailwind: "Tailwind",
   shadcn: "Shadcn",
+  svelte: "Svelte",
+  vue: "Vue.js"
 };
 
 const projects: Array<{
@@ -26,16 +28,16 @@ const projects: Array<{
   icon: string;
 }> = [
   {
-    title: "Sample Project",
-    description: "Example project showcasing features",
-    link: "https://github.com/ojoanalogo/terminus-astro-template",
+    title: "The Daily Drip",
+    description: "a simple news themed site to publish my personal speculations and predictions for future events and character releases in Genshin Impact, Honkai: Star Rail, and more.",
+    link: "https://github.com/riceconfetti/dailydrip-v3",
     icon: "🚀",
   },
   {
-    title: "Another Project",
-    description: "Add your own projects here",
+    title: "Tic-Tac-Team",
+    description: "A small application for a voip meta-game to be played in Genshin Impact ",
     icon: "💻",
-    link: "",
+    link: "https://github.com/riceconfetti/tic-tac-team",
   },
 ];
 ---
@@ -55,7 +57,7 @@ const projects: Array<{
             <div class="w-3 h-3 rounded-full bg-green-500"></div>
           </div>
           <span class="text-gray-400 text-xs ml-2"
-            >terminal - ssh guest@terminus</span
+            >terminal - ssh rhylen@mikucraft</span
           >
         </div>
 
@@ -65,9 +67,9 @@ const projects: Array<{
             <div class="flex items-center gap-4 mb-4">
               <p class="text-3xl">🌱</p>
               <div class="flex flex-col">
-                <h1 class="text-primary text-xl">Astro Template</h1>
+                <h1 class="text-primary text-xl">Rhylen Nguyen</h1>
                 <p class="text-gray-400 text-xs">
-                  Ready-to-use Astro template for developers
+                  front-end developer | making the internet silly, one line at a time
                 </p>
               </div>
             </div>
@@ -75,7 +77,7 @@ const projects: Array<{
             <!-- Personal paragraph -->
             <div class="bg-gray-500/10 rounded-lg p-3 mb-4">
               <p class="text-gray-200 leading-relaxed">
-                Welcome to this website boilerplate! This is a modern, customizable template built with Astro. Replace this content with your own information, projects, and blog posts to create your personal or professional website.
+                Hi, hello! I'm Rhylen and I love to code.
               </p>
             </div>
 
@@ -83,20 +85,20 @@ const projects: Array<{
 
             <div class="flex">
               <span class="text-gray-400 w-36 shrink-0">Location</span>
-              <span class="text-white">Your Location 🌍</span>
+              <span class="text-white">South Carolina, USA 🌍</span>
             </div>
 
             <div class="flex">
               <span class="text-gray-400 w-36 shrink-0">Work</span>
               <span class="text-white">
-                Your Job Title @
+                Computer Programmer @
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
                   class="text-cyan-600 hover:underline focus:outline-none focus:ring-2 focus:ring-cyan-600 focus:ring-offset-2 focus:ring-offset-gray-900"
-                  href="https://yourcompany.com"
-                  aria-label="Visit your company website"
-                  >yourcompany.com</a
+                  href="https://threesaintsbay.com/eagle-harbor/"
+                  aria-label="Visit threesaintsbay.com/eagle-harbor"
+                  >Eagle Harbor LLC</a
                 >
               </span>
             </div>
@@ -104,7 +106,7 @@ const projects: Array<{
             <div class="flex">
               <span class="text-gray-400 w-36 shrink-0">Interests</span>
               <span class="text-white"
-                >Technology, programming, your interests here</span
+                >Technology, programming, reading, tabletop games, video games, dancing</span
               >
             </div>
 
@@ -113,8 +115,8 @@ const projects: Array<{
               <span class="text-white">
                 <a
                   class="text-cyan-600 hover:underline focus:outline-none focus:ring-2 focus:ring-cyan-600 focus:ring-offset-2 focus:ring-offset-gray-900"
-                  href="mailto:your.email@example.com"
-                  aria-label="Send email to your.email@example.com">your.email@example.com</a
+                  href="mailto:me@rhylennguyen.com"
+                  aria-label="Send email to me@rhylennguyen.com">me@rhylennguyen.com</a
                 >
               </span>
             </div>
@@ -235,7 +237,7 @@ const projects: Array<{
         </div>
       </div>
     </section>
-
+<!-- 
     <section id="blog" class="mt-8">
       <h2 class="text-sm mb-6 font-semibold text-gray-500">✍️ latest posts</h2>
       <ul class="space-y-6" role="list">
@@ -247,6 +249,6 @@ const projects: Array<{
           ))
         }
       </ul>
-    </section>
+    </section> -->
   </main>
 </BaseLayout>
