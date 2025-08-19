@@ -1,47 +1,145 @@
-# Svelte + Vite
+# 🌱 Terminus
 
-This template should help get you started developing with Svelte in Vite.
+> A minimalist Astro template for developers
 
-## Recommended IDE Setup
+![Preview of template](./preview.png)
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+## ✨ Features
 
-## Need an official Svelte framework?
+- 🚀 **Astro 5.x** - Fast, content-focused web framework
+- 🎨 **Tailwind CSS** - Utility-first CSS framework with typography plugin
+- 📱 **Responsive Design** - Mobile-first approach
+- 📝 **Blog Ready** - Built-in blog functionality with markdown support
+- 🚀 **GitHub Pages Deployment** - Automated deployment via GitHub Actions
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+## 🛠️ Prerequisites
 
-## Technical considerations
+- **Node.js** 18+
+- A computer (optional)
 
-**Why use this over SvelteKit?**
+## 🚀 Quick Start
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+1. **Clone the repository**
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+   ```bash
+   git clone https://github.com/ojoanalogo/terminus-astro-template.git
+   cd terminus-astro-template
+   ```
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+2. **Install dependencies**
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+   ```bash
+   pnpm install
+   ```
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
+3. **Start the development server**
 
-**Why include `.vscode/extensions.json`?**
+   ```bash
+   pnpm dev
+   ```
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+4. **Open your browser**
+   Navigate to `http://localhost:4321` to see your site!
 
-**Why enable `checkJs` in the JS template?**
+## 📁 Project Structure
 
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
+```txt
+terminus/
+├── public/              # Static assets (favicon, images, etc.)
+├── src/
+│   ├── assets/         # Images, fonts, and other assets
+│   ├── components/     # Reusable Astro components
+│   │   ├── BaseHead.astro
+│   │   ├── Header.astro
+│   │   ├── PostPreview.astro
+│   │   └── ...
+│   ├── content/        # Content collections (blog posts, etc.)
+│   │   ├── blog/       # Blog posts in markdown
+│   │   └── config.ts   # Content collection configuration
+│   ├── layouts/        # Page layouts
+│   │   ├── BaseLayout.astro
+│   │   └── PostLayout.astro
+│   ├── pages/          # File-based routing
+│   │   ├── blog/       # Blog pages
+│   │   ├── index.astro # Homepage
+│   │   └── 404.astro   # Custom 404 page
+│   ├── styles/         # Global CSS styles
+│   ├── utils/          # Utility functions
+│   └── config.ts       # Site configuration
+├── astro.config.mjs    # Astro configuration
+├── tailwind.config.cjs # Tailwind CSS configuration
+└── package.json        # Dependencies and scripts
 ```
+
+## 🎨 Customization
+
+### Site Configuration
+
+Edit `src/config.ts` to customize your site:
+
+```typescript
+export const SITE_TITLE = "Your Site Title";
+export const SITE_DESCRIPTION = "Your site description";
+```
+
+### Astro Configuration
+
+Modify `astro.config.mjs` to:
+
+- Update the site URL for production
+- Add new integrations
+- Configure build options
+
+## 📝 Adding Content
+
+### Blog Posts
+
+Create new blog posts in `src/content/blog/`:
+
+```markdown
+---
+title: "Your Post Title"
+description: "Post description"
+pubDate: "2024-01-15"
+---
+
+Your content here...
+```
+
+### Pages
+
+Add new pages in the `src/pages/` directory. Astro uses file-based routing:
+
+- `src/pages/about.astro` → `/about`
+- `src/pages/contact/index.astro` → `/contact`
+
+## 🚀 Deployment
+
+This template is configured for **automatic deployment to GitHub Pages** using GitHub Actions.
+
+### Setup GitHub Pages Deployment
+
+1. **Fork or use this template** to create your repository
+2. **Enable GitHub Pages** in your repository settings:
+   - Go to Settings → Pages
+   - Select "GitHub Actions" as the source
+3. **Update the site URL** in `astro.config.mjs`:
+
+   ```javascript
+   export default defineConfig({
+     site: "https://yourusername.github.io/your-repo-name",
+     // ... other config
+   });
+   ```
+
+4. **Push to main branch** - deployment happens automatically!
+
+## 📄 License
+
+MIT
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
